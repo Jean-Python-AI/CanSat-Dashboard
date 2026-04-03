@@ -11,10 +11,16 @@ Le Backend est le serveur qui recoit les donnees du CanSat et les stocke.
 
 ```bash
 cd Backend
-cd src
 ```
 
-3. Lance le serveur :
+3. Lance l'environnement python
+
+sur Mac :
+```bash
+source .env/bin/activate
+```
+
+4. Lance le serveur :
 
 ```bash
 python manage.py runserver

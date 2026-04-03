@@ -79,11 +79,9 @@ npm --version
 Si ce n'est pas deja fait, telecharge le projet :
 
 ```bash
-git clone https://github.com/TON_UTILISATEUR/CanSat-Dashboard.git
+git clone https://github.com/Jean-Python-AI/CanSat-Dashboard.git
 cd CanSat-Dashboard
 ```
-
-Remplace `TON_UTILISATEUR` par le nom d'utilisateur GitHub du projet.
 
 ---
 
