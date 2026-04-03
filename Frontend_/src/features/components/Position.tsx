@@ -49,10 +49,12 @@ function Position({ latitude, longitude, gpsPath }: PositionProps) {
   const displayLon = selectedPoint ? selectedPoint[1] : longitude
 
   return (
-    <div className="bg-zinc-800 rounded-2xl px-2 md:px-4 py-2 md:py-4 w-full flex flex-col min-h-0 h-full">
-      <h1 className="text-ms font-bold text-zinc-400">position</h1>
+    <div className="bg-zinc-800 rounded-2xl w-full h-full flex flex-col overflow-hidden">
+      <div className="px-3 pt-2 pb-1 flex-shrink-0">
+        <h1 className="text-xs font-bold text-zinc-400 uppercase tracking-wide">position</h1>
+      </div>
       
-      <div className="flex-1 mt-2 rounded-xl overflow-hidden relative">
+      <div className="flex-1 min-h-0 px-1 pb-1">
         {isValidPosition ? (
           <MapContainer 
             center={[latitude, longitude]} 
@@ -94,21 +96,21 @@ function Position({ latitude, longitude, gpsPath }: PositionProps) {
         )}
       </div>
 
-      <div className="mt-2 flex gap-4 items-center">
-        <div className="flex flex-row items-center gap-2">
-          <span className="text-zinc-400 text-sm">Lat:</span>
-          <span className="text-white font-bold text-sm">{displayLat.toFixed(6)}°</span>
+      <div className="px-3 py-1 flex-shrink-0 flex gap-3 items-center bg-zinc-800/50">
+        <div className="flex items-center gap-1">
+          <span className="text-zinc-500 text-xs">Lat:</span>
+          <span className="text-white font-mono text-xs">{displayLat.toFixed(6)}</span>
         </div>
-        <div className="flex flex-row items-center gap-2">
-          <span className="text-zinc-400 text-sm">Lon:</span>
-          <span className="text-white font-bold text-sm">{displayLon.toFixed(6)}°</span>
+        <div className="flex items-center gap-1">
+          <span className="text-zinc-500 text-xs">Lon:</span>
+          <span className="text-white font-mono text-xs">{displayLon.toFixed(6)}</span>
         </div>
         {selectedPoint && (
           <button 
             onClick={() => setSelectedPoint(null)}
             className="ml-auto text-xs text-zinc-400 hover:text-white underline"
           >
-            Revenir à la position actuelle
+            Revenir
           </button>
         )}
       </div>

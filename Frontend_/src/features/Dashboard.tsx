@@ -88,7 +88,7 @@ function Dashboard({ launchID }: DashboardProps) {
         </div>
       )}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-4 h-[35vh] lg:h-auto lg:flex-1 lg:min-h-0">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-4 h-[35vh] lg:h-auto lg:flex-1 min-h-0 w-full">
         <div className="min-h-0 h-full">
           <TelemetryGrid
             isLive={isLive}
