@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# Frontend - Interface React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Le Frontend est l'interface visuelle qui permet de voir les donnees du CanSat.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Lancement rapide
 
-## React Compiler
+1. Ouvre un terminal
+2. Va dans le dossier Frontend_ :
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd Frontend_
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Si c'est la premiere fois, installe les dependances :
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+4. Lance le serveur de developpement :
+
+```bash
+npm run dev
+```
+
+Le Frontend demarre sur l'adresse : http://localhost:5173
+
+---
+
+## Commandes utiles
+
+### Lancer le serveur de developpement
+```bash
+npm run dev
+```
+
+### Creer une version pour la production
+```bash
+npm run build
+```
+
+### Verifier le code (linter)
+```bash
+npm run lint
+```
+
+### Previsualiser la version production
+```bash
+npm run preview
+```
+
+---
+
+## Utilisation
+
+Ouvre ton navigateur et va sur : http://localhost:5173
+
+Le Frontend doit etre lance **apres** le Backend. Si tu n'as pas lance le Backend, le Frontend ne pourra pas afficher les donnees.
+
+---
+
+## Structure du projet
+
+```
+Frontend_/
+|-- src/
+|   |-- App.tsx              # Application principale
+|   |-- main.tsx             # Point d'entree
+|   |-- services/api.ts      # Connexion au Backend
+|   |-- features/            # Parties de l'interface
+|-- public/                  # Fichiers publics
+|-- index.html               # Page HTML principale
+|-- package.json             # Dependances et scripts
+```
+
+---
+
+## Port utilise
+
+Le Frontend utilise le **port 5173** par defaut. Tu peux le voir dans le terminal quand le serveur demarre.
+
+---
+
+## Problemes frequents
+
+### Page blanche
+Verifie que le Backend est bien lance sur le port 8000.
+
+### Erreur a l'installation
+Essaye de supprimer le dossier `node_modules` et le fichier `package-lock.json`, puis retape `npm install`.
