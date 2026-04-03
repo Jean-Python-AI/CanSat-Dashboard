@@ -1,0 +1,96 @@
+# All the comands I use for this project
+
+---
+
+## Preparation
+
+---
+### To know the version
+
+for python
+```zsh
+python --version
+```
+for what we install
+```zsh
+python -m django --version
+```
+
+---
+### Virtual environement
+
+```zsh
+python3.13 -m venv .nameOtTheEnvironement
+```
+to activate the environement
+```zsh
+source .nameOfTheEnvironementFolder/bin/activate
+```
+
+---
+### For having a folder that show all the install we made
+
+that make a folder "requirements.txt" whit all the install (and the version) into it
+```zsh
+pip freeze > requirements.txt
+```
+For install all the sames install we have into the "requirements.txt" folder:
+```zsh
+pip install -r requirements.txt
+```
+
+
+---
+
+## Creat a Project
+
+---
+### Django comands
+
+For see all the comands
+```zsh
+django-admin
+```
+To know wath exatli do a specific comand
+```zsh
+django-admin help comandName
+``` 
+For start a project
+```zsh
+django-admin startproject Name
+```
+
+---
+### Lunch the Project
+
+For testing
+```zsh
+cd MainFolder
+python manage.py runserver
+```
+
+---
+### Data Base
+
+For delete the database
+```zsh
+rm db.sqlite3
+```
+
+---
+### After modifications
+
+```zsh
+python manage.py makemigrations
+```
+```zsh
+python manage.py migrate
+```
+
+---
+## Admin
+
+create the acount
+```zsh
+python manage.py createsuperuser
+```
