@@ -2,6 +2,9 @@
 
 Application pour afficher et enregistrer les donnees collectees par un CanSat.
 
+
+![screenshot](./Frontend_/public/Screenshot.png)
+
 ---
 
 ## Structure du projet
